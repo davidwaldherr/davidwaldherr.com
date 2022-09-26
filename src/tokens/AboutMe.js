@@ -13,6 +13,7 @@ const { spring } = useSpring({
     config: { mass: 1, stiffness: 80, damping: 10 },
 });
 
+//Springs
 const position = spring.to([0, 1], [0, 300])
 const rotation = spring.to([0, 1], [0, 2*Math.PI]);
 const scale = spring.to([0, 1], [1.31, 2]);
