@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useSpring, animated } from "@react-spring/three";
 
 // This function imports a gltf mesh with a material attached to it in a mesh to the scene.
-export default function Gmail() {
+export default function Gmail({ onClick }) {
     const { nodes, materials } = useSpline('https://prod.spline.design/XRVTldnmQ61eDtR3/scene.splinecode')
 
 const [active, setActive] = useState(false)
@@ -22,7 +22,7 @@ const rotation = spring.to([0, 1], [0, 2*Math.PI]);
 const scale = spring.to([0, 1], [1.31, 2]);
 
     return (
-    <>
+    <group onClick={onClick}>
       {active && <animated.group
           name="gmailToken"
           scale={scale}
@@ -132,6 +132,7 @@ const scale = spring.to([0, 1], [1.31, 2]);
               geometry={nodes.g.geometry}
               material={materials['My Text Material']}
               position={[-320, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="m"
@@ -150,24 +151,27 @@ const scale = spring.to([0, 1], [1.31, 2]);
               geometry={nodes.i.geometry}
               material={materials['My Text Material']}
               position={[-80, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="i"
               geometry={nodes.i1.geometry}
               material={materials['My Text Material']}
               position={[-80, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="l"
               geometry={nodes.l.geometry}
               material={materials['My Text Material']}
               position={[0, 24.58, 0]}
+              scale={2.2}
             />
           </group>
         </animated.group>
         }
 
-    </>
+    </group>
   )
 }
 

@@ -15,25 +15,194 @@ import Linktree from './tokens/Linktree'
 import Github from './tokens/Github'
 import LinkedIn from './tokens/LinkedIn'
 
-
-export default function Scene({ ...props }) {
+export default function Scene({ onButtonClick, clearIndex, ...rest }) {
   const { nodes, materials } = useSpline('https://prod.spline.design/XRVTldnmQ61eDtR3/scene.splinecode')
+
+  const buttons = [
+    AboutMe,
+    OpenAI,
+    Vanderbilt,
+    ThreeD,
+    DigitalArt,
+  ]
+
   return (
     <>
       <color attach="background" args={['#000000']} />
-      <AboutMe/>
+
+      {
+        buttons.map((Component, index) => {
+          return <Component onClick={() => {onButtonClick(index)}}/>
+        })
+      }  
+
       <Gmail/>
       <Phone/>
-      <OpenAI/>
-      <Vanderbilt/>
-      <ThreeD/>
-      <DigitalArt/>
       <Linktree/>
       <Github/>
       <LinkedIn/>
-
-      <group {...props} dispose={null}>
       
+      <group {...rest} dispose={null}>
+      
+      <group name="Text 3" position={[-796.29, -1164.05, -234]}>
+          <mesh
+            name="t"
+            geometry={nodes.t.geometry}
+            material={materials['My Text Material']}
+            position={[-552.13, 94, 0]}
+          />
+          <mesh
+            name="r"
+            geometry={nodes.r.geometry}
+            material={materials['My Text Material']}
+            position={[-512.18, 94, 0]}
+          />
+          <mesh
+            name="y"
+            geometry={nodes.y.geometry}
+            material={materials['My Text Material']}
+            position={[-472.23, 94, 0]}
+          />
+          <mesh
+            name="c"
+            geometry={nodes.c.geometry}
+            material={materials['My Text Material']}
+            position={[-392.33, 94, 0]}
+          />
+          <mesh
+            name="l"
+            geometry={nodes.l.geometry}
+            material={materials['My Text Material']}
+            position={[-352.38, 94, 0]}
+          />
+          <mesh
+            name="i"
+            geometry={nodes.i.geometry}
+            material={materials['My Text Material']}
+            position={[-312.43, 94, 0]}
+          />
+          <mesh
+            name="i1"
+            geometry={nodes.i1.geometry}
+            material={materials['My Text Material']}
+            position={[-312.43, 94, 0]}
+          />
+          <mesh
+            name="c1"
+            geometry={nodes.c1.geometry}
+            material={materials['My Text Material']}
+            position={[-272.48, 94, 0]}
+          />
+          <mesh
+            name="k"
+            geometry={nodes.k.geometry}
+            material={materials['My Text Material']}
+            position={[-232.53, 94, 0]}
+          />
+          <mesh
+            name="i2"
+            geometry={nodes.i2.geometry}
+            material={materials['My Text Material']}
+            position={[-192.58, 94, 0]}
+          />
+          <mesh
+            name="i3"
+            geometry={nodes.i3.geometry}
+            material={materials['My Text Material']}
+            position={[-192.58, 94, 0]}
+          />
+          <mesh
+            name="n"
+            geometry={nodes.n.geometry}
+            material={materials['My Text Material']}
+            position={[-152.63, 94, 0]}
+          />
+          <mesh
+            name="g"
+            geometry={nodes.g.geometry}
+            material={materials['My Text Material']}
+            position={[-112.68, 94, 0]}
+          />
+          <mesh
+            name="o"
+            geometry={nodes.o.geometry}
+            material={materials['My Text Material']}
+            position={[-32.78, 94, 0]}
+          />
+          <mesh
+            name="n1"
+            geometry={nodes.n1.geometry}
+            material={materials['My Text Material']}
+            position={[7.17, 94, 0]}
+          />
+          <mesh
+            name="t1"
+            geometry={nodes.t1.geometry}
+            material={materials['My Text Material']}
+            position={[87.07, 94, 0]}
+          />
+          <mesh
+            name="h"
+            geometry={nodes.h.geometry}
+            material={materials['My Text Material']}
+            position={[127.02, 94, 0]}
+          />
+          <mesh
+            name="e"
+            geometry={nodes.e.geometry}
+            material={materials['My Text Material']}
+            position={[166.97, 94, 0]}
+          />
+          <mesh
+            name="t2"
+            geometry={nodes.t2.geometry}
+            material={materials['My Text Material']}
+            position={[246.87, 94, 0]}
+          />
+          <mesh
+            name="o1"
+            geometry={nodes.o1.geometry}
+            material={materials['My Text Material']}
+            position={[286.82, 94, 0]}
+          />
+          <mesh
+            name="k1"
+            geometry={nodes.k1.geometry}
+            material={materials['My Text Material']}
+            position={[326.77, 94, 0]}
+          />
+          <mesh
+            name="e1"
+            geometry={nodes.e1.geometry}
+            material={materials['My Text Material']}
+            position={[366.72, 94, 0]}
+          />
+          <mesh
+            name="n2"
+            geometry={nodes.n2.geometry}
+            material={materials['My Text Material']}
+            position={[406.67, 94, 0]}
+          />
+          <mesh
+            name="s"
+            geometry={nodes.s.geometry}
+            material={materials['My Text Material']}
+            position={[446.62, 94, 0]}
+          />
+          <mesh
+            name="!"
+            geometry={nodes['!'].geometry}
+            material={materials['My Text Material']}
+            position={[486.57, 94, 0]}
+          />
+          <mesh
+            name="!1"
+            geometry={nodes['!1'].geometry}
+            material={materials['My Text Material']}
+            position={[486.57, 94, 0]}
+          />
+        </group>
+
       <group name="davidwaldherr.com" position={[200, -1300, 54.5]}>
           <mesh
             name="d"
@@ -58,12 +227,16 @@ export default function Scene({ ...props }) {
             geometry={nodes.i.geometry}
             material={materials['My Text Material']}
             position={[-642, 16.5, 0]}
+            scale={2.2}
+
           />
           <mesh
             name="i"
             geometry={nodes.i1.geometry}
             material={materials['My Text Material']}
             position={[-642, 16.5, 0]}
+            scale={2.2}
+
           />
           <mesh
             name="d"
@@ -88,6 +261,7 @@ export default function Scene({ ...props }) {
             geometry={nodes.l.geometry}
             material={materials['My Text Material']}
             position={[-302, 16.5, 0]}
+            scale={2.2}
           />
           <mesh
             name="d"
@@ -100,18 +274,21 @@ export default function Scene({ ...props }) {
             geometry={nodes.h.geometry}
             material={materials['My Text Material']}
             position={[-132, 16.5, 0]}
+            scale={2.2}
           />
           <mesh
             name="e"
             geometry={nodes.e.geometry}
             material={materials['My Text Material']}
             position={[-47, 16.5, 0]}
+            scale={2.2}
           />
           <mesh
             name="r"
             geometry={nodes.r.geometry}
             material={materials['My Text Material']}
             position={[38, 16.5, 0]}
+            scale={2.2}
           />
           <mesh
             name="r"
@@ -130,12 +307,14 @@ export default function Scene({ ...props }) {
             geometry={nodes.c.geometry}
             material={materials['My Text Material']}
             position={[293, 16.5, 0]}
+            scale={2.2}
           />
           <mesh
             name="o"
             geometry={nodes.o.geometry}
             material={materials['My Text Material']}
             position={[378, 16.5, 0]}
+            scale={2.2}
           />
           <mesh
             name="m"
@@ -148,10 +327,10 @@ export default function Scene({ ...props }) {
         <OrthographicCamera
           name="Camera"
           makeDefault={true}
-          zoom={0.36}
-          far={100000}
-          near={-100000}
-          position={[-47.43, 343.44, 8457.66]}
+          zoom={0.15}
+          far={10000}
+          near={8000}
+          position={[-47.43, 100.44, 8457.66]}
         />
         <pointLight
           name="Point Light"
@@ -174,44 +353,6 @@ export default function Scene({ ...props }) {
             scale={0.38}
           />
         </group>
-        <group name="Home Token" position={[-1611.93, 1153.56, 5.42]} scale={0.78}>
-          <mesh
-            name="Shape 23"
-            geometry={nodes['Shape 23'].geometry}
-            material={materials.Gold}
-            castShadow
-            receiveShadow
-            position={[-131.74, 22.89, 7.63]}
-            scale={0.76}
-          />
-          <mesh
-            name="Shape4"
-            geometry={nodes.Shape4.geometry}
-            material={materials.Gold}
-            castShadow
-            receiveShadow
-            position={[-95.15, 17.49, 6.4]}
-            scale={0.76}
-          />
-          <mesh
-            name="Merged Geometry 3"
-            geometry={nodes['Merged Geometry 3'].geometry}
-            material={materials.Gold}
-            castShadow
-            receiveShadow
-          />
-          <mesh
-            name="Ellipse 32"
-            geometry={nodes['Ellipse 32'].geometry}
-            material={materials['Ellipse 32 Material']}
-            castShadow
-            receiveShadow
-            position={[0.13, 1.57, -18.97]}
-          />
-        </group>
-        
-        
-        
         
         <hemisphereLight name="Default Ambient Light" intensity={0.75} color="#eaeaea" position={[0, 1, 0]} />
       </group>

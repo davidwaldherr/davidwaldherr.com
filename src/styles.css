@@ -6,3 +6,12 @@ body,
 #root {
   height: 100%;
 }
+
+/* This div auto-adjusts to the height 100% of the frame */
+div {
+  background-color: #000;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0 auto;
+}

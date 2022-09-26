@@ -123,6 +123,7 @@ const scale = spring.to([0, 1], [1.31, 2]);
               geometry={nodes.k.geometry}
               material={materials['My Text Material']}
               position={[-80, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="t"

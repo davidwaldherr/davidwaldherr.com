@@ -81,43 +81,42 @@ const scale = spring.to([0, 1], [1.31, 2]);
               name="c"
               geometry={nodes.c.geometry}
               material={materials['My Text Material']}
-              position={[-160, 66.58, 0]}
-              scale={.75}
+              position={[-180, 66.58, 0]}
+              scale={2}
             />
             <mesh
               name="a"
               geometry={nodes.a2.geometry}
               material={materials['My Text Material']}
               position={[-100, 66.58, 0]}
-              scale={.75}
+              scale={.9}
             />
             <mesh
               name="l"
               geometry={nodes.l1.geometry}
               material={materials['My Text Material']}
-              position={[-40, 66.58, 0]}
-              scale={.75}
+              position={[-30, 66.58, 0]}
+              scale={.9}
             />
             <mesh
               name="l"
               geometry={nodes.l2.geometry}
               material={materials['My Text Material']}
-              position={[20, 66.58, 0]}
-              scale={1.05}
+              position={[30, 66.58, 0]}
+              scale={.9}
             />
             <mesh
               name="m"
               geometry={nodes.m2.geometry}
               material={materials['My Text Material']}
               position={[140, 66.58, 0]}
-              scale={.75}
             />
             <mesh
               name="e"
               geometry={nodes.e1.geometry}
               material={materials['My Text Material']}
-              position={[200, 66.58, 0]}
-              scale={.75}
+              position={[220, 66.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="("

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useSpring, animated } from "@react-spring/three";
 
 // This function imports a gltf mesh with a material attached to it in a mesh to the scene.
-export default function OpenAI() {
+export default function OpenAI({ onClick}) {
     const { nodes, materials } = useSpline('https://prod.spline.design/XRVTldnmQ61eDtR3/scene.splinecode')
 
 const [active, setActive] = useState(false)
@@ -19,7 +19,7 @@ const rotation = spring.to([0, 1], [0, 2*Math.PI]);
 const scale = spring.to([0, 1], [1, 2]);
 
     return (
-    <>
+    <group onClick={onClick}>
         {active && <animated.group
           name="topToken"
           scale={scale}
@@ -80,6 +80,7 @@ const scale = spring.to([0, 1], [1, 2]);
               geometry={nodes.o1.geometry}
               material={materials['My Text Material']}
               position={[-320, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="p"
@@ -92,13 +93,13 @@ const scale = spring.to([0, 1], [1, 2]);
               geometry={nodes.e2.geometry}
               material={materials['My Text Material']}
               position={[-160, 24.58, 0]}
-              scale={1.35}
             />
             <mesh
               name="n"
               geometry={nodes.n.geometry}
               material={materials['My Text Material']}
               position={[-80, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="a"
@@ -111,14 +112,14 @@ const scale = spring.to([0, 1], [1, 2]);
               geometry={nodes.i2.geometry}
               material={materials['My Text Material']}
               position={[80, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="i"
               geometry={nodes.i3.geometry}
               material={materials['My Text Material']}
-              castShadow
-              receiveShadow
               position={[80, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="p"
@@ -131,6 +132,7 @@ const scale = spring.to([0, 1], [1, 2]);
               geometry={nodes.r.geometry}
               material={materials['My Text Material']}
               position={[320, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="o"
@@ -161,25 +163,27 @@ const scale = spring.to([0, 1], [1, 2]);
               geometry={nodes.c1.geometry}
               material={materials['My Text Material']}
               position={[640, 24.58, 0]}
-              scale={1.35}
+              scale={2.2}
             />
             <mesh
               name="t"
               geometry={nodes.t1.geometry}
               material={materials['My Text Material']}
               position={[720, 24.58, 0]}
+              scale={2.2}
             />
             <mesh
               name="s"
               geometry={nodes.s.geometry}
               material={materials['My Text Material']}
               position={[800, 24.58, 0]}
+              scale={2.2}
             />
           </group>
         </animated.group>
         }
 
-    </>
+    </group>
   )
 }
 
