@@ -10,7 +10,7 @@ export default function App() {
   function onMouseDown(e) {
     setActiveSceneIndex(null);
   }
-
+//scenes array
   const scenes = [
     <Spline 
       onClick={onMouseDown}
